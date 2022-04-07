@@ -13,7 +13,4 @@ terminate() {
 kafka_2.13-3.1.0/bin/zookeeper-server-start.sh -daemon conf/zookeeper.properties
 kafka_2.13-3.1.0/bin/kafka-server-start.sh conf/server.properties &
 
-while true
-do
-  sleep 1
-done
+sleep infinity & wait $!

@@ -23,15 +23,12 @@ services:
     ports:
       - 29093:29093
 
-  # python-producer:
-  #   build:
-  #     context: python-producer/
-  #   depends_on:
-  #     - broker1
-  #     - broker2
-  #     - broker3
-  #   networks:
-  #     - kafka-network
+  db:
+    build:
+      context: ./postgres-db
+    networks:
+      - kafka-network
+
 
 networks:
   kafka-network:
